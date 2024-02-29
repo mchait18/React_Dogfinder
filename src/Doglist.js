@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Nav from "./Nav";
 
 function Doglist({ dogs }) {
     return (
@@ -7,8 +7,8 @@ function Doglist({ dogs }) {
             <h1>Welcome to our Dogs!</h1>
             <ul>
                 {dogs.map(dog => (
-                    <li key={dog.src}>
-                        <Nav dogs={dogs} name={dog.src} />
+                    <li key={dog.name}>
+                        <Nav dogs={dogs} name={dog.name} />
                     </li>
                 ))}
             </ul>
@@ -16,14 +16,5 @@ function Doglist({ dogs }) {
     );
 }
 
-function Nav({ name, dogs }) {
-    const dog = dogs.filter(dog => (
-        dog.src === name))
-
-    return <Link to={{
-        pathname: `/dogs/${dog[0].src}`,
-        state: { age: dog[0].age, facts: dog[0].facts }
-    }}>{dog[0].name}</Link>
-}
 
 export default Doglist

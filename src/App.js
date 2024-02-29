@@ -3,12 +3,13 @@ import DogList from "./Doglist"
 import DogDetails from "./DogDetails"
 import { Route, Switch, Redirect } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
-
+import NavBar from "./NavBar";
 
 function App({ dogs }) {
   return (
     <div>
       <BrowserRouter>
+        <NavBar dogs={dogs} />
         <Switch>
           <Route exact path="/dogs" >
             <DogList dogs={dogs} />
