@@ -5,7 +5,7 @@ import Nav from "./Nav"
 
 function NavBar({ dogs }) {
     const links = dogs.map(dog => (
-        <Nav key={dog.src} dogs={dogs} name={dog.name} />
+        <Nav key={dog.name} dogs={dogs} name={dog.name} />
     ));
 
     return (

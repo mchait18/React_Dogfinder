@@ -6,7 +6,7 @@ function Nav({ name, dogs }) {
         dog.name === name))
 
     return <Link to={{
-        pathname: `/dogs/${dog[0].src}`,
+        pathname: `/dogs/${dog[0].name}`,
         state: { age: dog[0].age, facts: dog[0].facts }
     }}>{dog[0].name}</Link>
 }
